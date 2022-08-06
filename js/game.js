@@ -46,7 +46,7 @@ resources.onReady(init);
 var level;
 var sounds;
 var music;
-
+var score;
 //initialize
 var lastTime;
 function init() {
@@ -72,6 +72,7 @@ function init() {
   };
   Mario.oneone();
   lastTime = Date.now();
+  score= new Mario.Score();
   main();
 }
 
@@ -234,6 +235,7 @@ function render() {
   level.pipes.forEach (function(pipe) {
     renderEntity(pipe);
   });
+  score.render(ctx);
 }
 
 function renderEntity(entity) {

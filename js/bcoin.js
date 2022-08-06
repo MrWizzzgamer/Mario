@@ -31,6 +31,7 @@
     if (this.vel > 0 && this.pos[1] >= this.targetpos) {
       player.coins += 1;
       //spawn a score thingy.
+      score.update(1);
       delete level.items[this.idx];
     }
 
